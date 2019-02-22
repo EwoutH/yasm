@@ -1,5 +1,7 @@
 image: Visual Studio 2017
-configuration: Release
+configuration:
+ - Release|Win32
+ - Release|x64
 
 before_build: cmake .
 
@@ -7,5 +9,5 @@ build:
   project: yasm.sln
   
 artifacts:
-    - path: bin\Release\*.*
-      name: $(APPVEYOR_PROJECT_NAME)
+    - path: Win32\Release\*.*
+    - path: x64\Release\*.*
