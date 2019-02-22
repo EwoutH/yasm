@@ -1,0 +1,21 @@
+language: c
+
+addons:
+  apt:
+    packages:
+     - cmake
+
+script:
+ - ./configure
+ - make 
+ - make check
+ - make install
+
+jobs:
+  include:
+   # General Linux build job
+   - name: Linux build
+   - dist: xenial
+   # General macOS build job
+   - name: macOS build
+     os: osx   
